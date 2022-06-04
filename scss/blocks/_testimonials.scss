@@ -1,0 +1,112 @@
+.testimonials {
+    min-height: 559px;
+
+    &,
+    &__container,
+    &__photo {
+        position: relative;
+    }
+
+    &__container {
+        z-index: 9;
+        @include padding($top: 45px, $bottom: 45px);
+    }
+
+    &__bg,
+    &__photo-img {
+        @include object-cover;
+        @include position(absolute, $top: 0, $left: 0);
+    }
+
+    &__bg {
+        pointer-events: none;
+    }
+
+    &__title {
+        text-transform: none;
+        @include margin($bottom: 33px);
+    }
+
+    &__title,
+    &__item,
+    &__photo {
+        color: $white;
+    }
+
+    &__photo {
+        width: 132px;
+        height: 132px;
+        overflow: hidden;
+        @include margin($top: 0, $bottom: 25px, $left: auto, $right: auto);
+
+        &::before {
+            content: 'Loading...';
+            animation: animTextLoading 2s linear infinite;
+        }
+    }
+
+    &__photo,
+    &__photo-img {
+        border-radius: 50%;
+    }
+
+    &__content {
+        max-width: 80%;
+        line-height: 1.2;
+        @include margin($top: 0, $bottom: 0, $left: auto, $right: auto);
+    }
+
+    &__name {
+        font-style: italic;
+        @include margin($top: 1.2em, $bottom: 28px);
+    }
+
+    &__swiper {
+        @include margin($bottom: 42px);
+
+        .swiper-pagination {
+            @include position(relative, $top: 0, $left: 0)
+        }
+
+        .swiper-pagination-bullet {
+            width: 24px;
+            height: 24px;
+            background-color: $white;
+            opacity: 1;
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+
+            &:hover {
+                background-color: rgba($red, .25);
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $red;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            top: 57%;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-transform: uppercase;
+        color: $red;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $red;
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__swiper {
+            @include margin($bottom: 20px);
+        }
+    }
+}

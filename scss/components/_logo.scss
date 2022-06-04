@@ -1,0 +1,20 @@
+.logo {
+    color: $dark2;
+    will-change: opacity;
+    transition: opacity .3s ease;
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.2;
+        @include margin($top: 14px);
+        @include position(relative, $left: -8px);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: .8;
+        color: $dark2;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,11 @@
+.hero {
+    background-color: $dark;
+
+    &__container {
+        @include padding($top: 47px, $bottom: 47px);
+    }
+
+    &__title {
+        color: $white;
+    }
+}

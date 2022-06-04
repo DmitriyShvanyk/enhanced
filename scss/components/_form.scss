@@ -1,0 +1,78 @@
+.form {
+    &__body {
+        @include margin($bottom: 45px);
+    }
+
+    &__foot {
+        text-align: center;
+    }
+
+    &__item {
+        position: relative;
+        @include margin($bottom: 1.05em);
+    }
+
+    &__label,
+    &__required {
+        color: $dark;
+        font-weight: 500;
+    }
+
+    &__label {
+        font-size: 15px;
+        letter-spacing: .3px;
+        @include margin($bottom: 3px);
+    }
+
+    &__control {
+        color: $dark;
+        width: 100%;
+        height: 47px;
+        border: 1px solid $lightgray;
+        box-shadow: none;
+        @include padding($top: 5px, $bottom: 5px, $left: 15px, $right: 15px);
+        transition: box-shadow .3s ease, border-color .3s ease;
+
+        &::placeholder {
+            color: $lightgray2;
+        }
+
+        &:focus {
+            border-color: $blue;
+            box-shadow:  0 0 0 3px rgba($blue, .2);
+        }
+    }
+
+    &__control--textarea {
+        resize: vertical;
+        min-height: 273px;
+        @include padding($top: 15px);
+    }
+
+    &__control-icon {
+        opacity: .2;
+        pointer-events: none;
+        max-height: 20px;
+        max-width: 20px;
+        @include position(absolute, $top: 37px, $right: 8px);
+    }
+
+    &__control:focus + &__control-icon{
+        opacity: 1;
+        filter: invert(35%) sepia(60%) saturate(5673%) hue-rotate(341deg) brightness(111%) contrast(139%);
+    }
+
+    &__submit {
+        -webkit-appearance: none;
+    }
+
+    &__required {
+        letter-spacing: .8px;
+    }
+
+    @media (max-width: 767px) {
+        &__body {
+            @include margin($bottom: 25px);
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.social {
+    &__link {
+        width: 24px;
+        height: 24px;
+        color: $white;
+        background-color: #507CBE;
+        border-radius: 50%;
+        @include margin($left: 2px, $right: 2px);
+        will-change: opacity;
+        transition: opacity .3s ease;
+
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: .8;
+            color: $white;
+        }
+    }
+
+    &__i {
+        width: 14px;
+        height: 14px;
+    }
+
+    &__link--tw {
+        background-color: #63CDF1;
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    }
+
+    &__link--yelp {
+        background-color: #BB0000;
+    }
+
+    &__link--ytb {
+        background-color: #EA412C;
+    }
+
+    &__link--g {
+        background-color: #E05044;
+    }
+}

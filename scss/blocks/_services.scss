@@ -1,0 +1,48 @@
+.services {
+    &__container {
+        @include padding($top: 36px);
+    }
+
+    &__article {
+        @include padding($left: 0px, $right: 0px);
+        @include margin($bottom: 70px);
+    }
+
+    @media (min-width:1024px) {
+        &__article {
+            @include position(relative, $left: -12px);
+            line-height: 1.5;
+            width: calc(100% + 12px);
+        }
+
+        &__pict {
+            @include margin($top: 25px);
+        }
+    }
+
+    @media (min-width:768px) {
+        &__pict {
+            max-width: 442px;
+        }
+    }
+
+    @media (max-width:767px) {
+        &__article {
+            @include margin($bottom: 40px);
+        }
+
+        &__pict {
+            @include margin($bottom: 10px);
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width:576px) {
+        &__container {
+            @include padding($top: 15px);
+        }
+    }
+}

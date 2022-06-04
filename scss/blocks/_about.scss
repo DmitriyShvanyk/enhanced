@@ -1,0 +1,38 @@
+.about {
+    &__container {
+        @include padding($top: 28px);
+    }
+
+    &__subtitle {
+        color: $dark2;
+        line-height: 1;
+        @include margin($bottom: 36px);
+    }
+
+    &__article {
+        @include margin($bottom: 42px);
+    }
+
+    &__item {
+        @include margin($bottom: 80px);
+    }
+
+    @media (min-width:768px) {
+        &__item {
+            .about__subtitle {
+                @include padding($left: 20px, $right: 20px);
+                @include margin($bottom: 53px);
+            }
+        }
+    }
+
+    @media (max-width:767px) {
+        &__subtitle {
+            @include margin($bottom: 25px);
+        }
+
+        &__item {
+            @include margin($bottom: 50px);
+        }
+    }
+}

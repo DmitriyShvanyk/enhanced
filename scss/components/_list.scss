@@ -1,0 +1,9 @@
+.list {
+    @include padding($left: 4px);
+    @include margin($top: 0, $bottom: 0);
+    list-style-position: inside;
+
+    &__item {
+        @include margin($bottom: 1.5px);
+    }
+}

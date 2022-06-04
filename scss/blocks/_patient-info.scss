@@ -1,0 +1,71 @@
+.patient-info {
+    &__container {
+        @include padding($top: 55px);
+    }
+
+    &__inner {
+        @include margin($bottom: 25px);
+    }
+
+    &__pict {
+        background-color: $dark;
+        @include aspect-ratio(95.61%);
+        @include margin($bottom: 2em);
+    }
+
+    &__img {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+    }
+
+    &__subtitle {
+        font-size: 25px;
+        letter-spacing: .6px;
+        @include margin($bottom: 0);
+
+        &~& {
+            @include margin($top: 1.2em);
+        }
+    }
+
+    &__content {
+        letter-spacing: .5px;
+        line-height: 1.6;
+
+        p {
+            color: $darkgray;
+            @include margin($top: 4px, $bottom: 1.85em);
+        }
+    }
+
+    &__list {
+        color: $darkgray;
+        @include margin($top: 1.7em);
+    }
+
+    @media (min-width:768px) {
+        &__pict {
+            @include margin($top: 33px);
+        }
+
+        &__content {
+            @include padding($right: 30px);
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 40px);
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__container {
+            @include padding($top: 15px);
+        }
+
+        &__subtitle {
+            font-size: 6vw;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.leave-review {
+    background-color: $dark;
+    @include padding($top: 35px, $bottom: 35px, $left: 1em, $right: 1em);
+
+    &,
+    &__form {
+        position: relative;
+    }
+
+    &__bg {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+    }
+
+    &__form {
+        z-index: 9;
+        @include margin($left: auto, $right: auto);
+
+        .form__control {
+            height: 42px;
+        }
+
+        .form__control--textarea {
+            min-height: 139px;
+        }
+
+        .form__submit {
+            border-color: $red;
+        }
+    }
+
+    @media (min-width: 991px) {
+        @include margin($top: -5px, $bottom: -28px);
+    }
+
+    @media (min-width: 768px) {
+        & {
+            @include padding($top: 50px, $bottom: 50px);
+        }
+
+        &__form {
+            max-width: 340px;
+
+            .form__body {
+                @include margin($bottom: -10px);
+            }
+
+            .form__item {
+                @include margin($bottom: 1.55em);
+            }
+
+            .form__foot {
+                text-align: right;
+            }
+
+            .form__submit {
+                letter-spacing: 1px;
+                min-width: 94px;
+                @include padding($top: 7px, $bottom: 7px, $left: 15px, $right: 15px);
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.hamburger {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 50%;
+    z-index: 999;
+
+    &__line {
+        width: 31px;
+        height: 2px;
+        min-height: 2px;
+        background-color: $dark;
+    }
+
+    &__line+&__line {
+        @include margin($top: 6px);
+    }
+}

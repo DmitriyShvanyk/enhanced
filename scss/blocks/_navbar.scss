@@ -1,0 +1,92 @@
+.navbar {
+    &__head {
+        width: 100%;
+    }
+
+    @media (max-width: 991px) {
+        &__collapse {
+            @include position(fixed, $top: 0, $left: 0);
+            @include padding($bottom: 3em);
+            width: 100%;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            background-color: $white;
+            z-index: 9998;
+            transform: translateX(150%);
+            will-change: transform;
+            transition: transform .5s ease;
+        }
+
+        &__collapse--active {
+            transform: translateX(0);
+        }
+
+        &__head {
+            @include padding($left: 25px, $right: 25px);
+            min-height: 80px;
+            border-bottom: 1px solid rgba(27, 44, 58, .1);
+
+            .navbar__toggle {
+                @include margin($left: auto, $right: 24px);
+            }
+        }
+
+        &__close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            position: relative;
+            @include margin($left: auto, $right: -9px);
+
+            &::before,
+            &:after {
+                content: '';
+                width: 16px;
+                height: 1px;
+                background-color: rgba($dark, .8);
+                @include position(absolute, $top: 50%, $left: 50%);
+                @include margin($top: -.5px, $left: -8px);
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &__menu {
+            height: auto;
+            @include padding($top: 0);
+
+            .menu__item {
+                border-bottom: 1px solid rgba($dark, .1);
+            }
+
+            .menu__link {
+                display: block;
+                @include padding($top: 1.5em, $bottom: 1.5em, $left: 2em, $right: 2em);
+                @include margin($left: 0, $right: 0);
+            }
+
+            .menu__link::before {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__head {
+            min-height: 60px;
+        }
+
+        &__menu {
+            .menu__link {
+                font-size: 4vw;
+                @include padding($top: 1em, $bottom: 1em, $left: 25px, $right: 25px);
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.pagination {
+    &,
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__link {
+        width: 33px;
+        height: 33px;
+        color: $dark2;
+        border: 1px solid $dark2;
+        border-radius: 50%;
+        @include margin($left: 3px, $right: 3px);
+
+        &:hover {
+            color: $red;
+            border-color: $red;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+    }
+
+    &__link--active {
+        color: $red;
+        border-color: $red;
+    }
+}

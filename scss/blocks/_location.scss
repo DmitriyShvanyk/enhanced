@@ -1,0 +1,46 @@
+.location {
+    &__container {
+        @include padding($top: 48px);
+    }
+
+    &__pict {
+        background-color: $dark;
+        @include aspect-ratio(47.4%);
+        @include margin($bottom: 40px);
+    }
+
+    &__img {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+    }
+
+    @media (min-width: 1200px) {
+        &__pict {
+            @include margin($bottom: 100px);
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__block {
+            .contacts__content {
+                @include padding($top: 8px, $left: 33px);
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 40px, $bottom: 40px);
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__container {
+            @include padding($top: 15px);
+        }
+
+        &__pict {
+            @include margin($bottom: 15px);
+        }
+    }
+}

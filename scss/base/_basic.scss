@@ -1,0 +1,248 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba($black, 0);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $white;
+  color: $dark2;
+  font-family: $fontDefault;
+  font-size: $fontSizeDefault;
+  font-weight: 400;
+  line-height: $lineHeight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  @include margin($top: 0);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+
+
+
+
+/* form elements */
+
+* {
+  outline: none !important;
+}
+
+input,
+select,
+button,
+textarea {
+  font-family: $fontDefault;
+}
+
+
+
+/* link */
+
+a {
+  color: $red;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $red;
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+
+/* helper classes */
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-dark {
+  color: $dark;
+}
+
+.text-dark2 {
+  color: $dark2;
+}
+
+
+
+.img-cover {
+  object-fit: cover;
+}
+
+
+
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+
+
+
+.ff-permanent-marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+
+
+
+
+
+
+/* img responsive */
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+
+
+
+
+/* lazyload */
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 100ms;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+
+
+
+
+/* sr-only */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+
+
+
+.pict {
+  background-color: $dark;
+  @include aspect-ratio(43.125%);
+
+  &__img {
+    @include position(absolute, $top: 0, $left: 0);
+    @include object-cover;
+  }
+}

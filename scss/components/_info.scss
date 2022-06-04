@@ -1,0 +1,22 @@
+.info {
+    color: $darkgray;
+    letter-spacing: .6px;
+
+    &__item {
+        &+& {
+            @include margin($top: 20px);
+        }
+    }
+
+    a,
+    &__tel {
+        color: $darkgray;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $red;
+        }
+    }
+}

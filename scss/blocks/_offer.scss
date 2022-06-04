@@ -1,0 +1,80 @@
+.offer {
+    background-color: $dark;
+
+    &__container {
+        @include padding($top: 28px);
+    }
+
+    &__title,
+    &__subtitle {
+        color: $white;
+    }
+
+    &__title {
+        text-transform: none;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        @include margin($bottom: 67px);
+    }
+
+    &__title,
+    &__items,
+    &__pict {
+        @include margin($bottom: 70px);
+    }
+
+    &__items {
+        position: relative;
+    }
+
+    &__item {
+        @include margin($top: 30px);
+    }
+
+    &__pict {
+        min-height: 118px;
+    }
+
+    &--services {
+        background-color: $dark2;
+    }
+
+    @media (max-width: 1200px) {
+        &__title {
+            @include margin($bottom: 20px);
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__items {
+            @include margin($bottom: 0);
+        }
+
+        &__item,
+        &__pict,
+        &__subtitle {
+            @include margin($bottom: 20px);
+        }
+
+        &__pict {
+            min-height: 60px;
+        }
+
+        &__img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        &__subtitle {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__subtitle {
+            font-size: 5vw;
+        }
+    }
+}

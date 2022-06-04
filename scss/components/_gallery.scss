@@ -1,0 +1,34 @@
+.gallery {
+    &__pict,
+    &__video {
+        @include aspect-ratio(42.95%);
+    }
+
+    &__video {
+        background-color: $dark;
+    }
+
+    &__pict--ratio {
+        @include aspect-ratio(56.25%);
+    }
+
+    &__img,
+    &__iframe {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+        border: none;
+    }
+
+    &__swiper:not(.swiper-initialized) {
+        .gallery__img {
+            opacity: 0;
+        }
+    }
+
+    @media (max-width:767px) {
+        &__pict,
+        &__video {
+            @include aspect-ratio(56.25%);
+        }
+    }
+}

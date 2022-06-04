@@ -1,0 +1,38 @@
+.btn {
+  outline: none;
+  position: relative;
+  z-index: 199;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1;
+  @include padding($top: 15px, $bottom: 15px, $left: 24px, $right: 24px);
+  text-transform: uppercase;
+  min-width: 138px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  color: $white;
+  background-color: $red;
+  border: 1px solid $white;
+  text-decoration: none;
+  background-color: none;
+  will-change: opacity;
+  transition: opacity .3s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $red;
+    color: $white;
+    text-decoration: none;
+    opacity: .8;
+  }
+
+  &--sm {
+    font-size: 14px;
+    @include padding($top: 17.5px, $bottom: 17.5px);
+  }
+}

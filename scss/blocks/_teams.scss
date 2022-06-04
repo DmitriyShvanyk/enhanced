@@ -1,0 +1,110 @@
+.teams {
+    &__container {
+        @include padding($top: 1px);
+    }
+
+    &__item {
+        @include padding($top: 55px, $bottom: 15px);
+        min-height: 515px;
+
+        &+& {
+            border-top: 2px solid $lightgray3;
+        }
+
+        &:first-of-type {
+            @include padding($top: 45px);
+        }
+    }
+
+    &__item--2 {
+        @include padding($bottom: 45px);
+    }
+
+    &__item--3 {
+        @include padding($top: 70px, $bottom: 45px);
+    }
+
+    &__item--4,
+    &__item--5 {
+        @include padding($top: 60px, $bottom: 45px);
+    }
+
+    &__pict {
+        @include aspect-ratio(125.84%);
+        background-color: $dark2;
+        max-width: 295px;
+    }
+
+    &__img {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        color: $dark;
+        line-height: 1;
+        @include margin($bottom: 5px);
+    }
+
+    &__position,
+    &__text {
+        letter-spacing: 1px;
+    }
+
+    &__position {
+        color: $red;
+        @include margin($bottom: 4px);
+    }
+
+    &__text {
+        color: #666;
+        line-height: 1.85;
+
+        p {
+            @include margin($top: 0, $bottom: 1.9em);
+
+            &:last-of-type {
+                @include margin($bottom: .2em);
+            }
+        }
+    }
+
+    @media (min-width:1200px) {
+        &__inner {
+            @include padding($left: 20px, $right: 20px);
+            @include margin($bottom: 30px);
+        }
+
+        &__content {
+            @include padding($left: 4px);
+        }
+    }
+
+    @media (max-width:767px) {
+        &__pict {
+            max-width: 100%;
+            @include margin($bottom: 2em);
+        }
+
+        &__item {
+            @include padding($top: 40px, $bottom: 40px);
+        }
+
+        &__text {
+            p {
+                &:last-of-type {
+                    @include margin($bottom: 0);
+                }
+            }
+        }
+    }
+
+    @media (max-width:576px) {
+        &__item {
+            &:first-of-type {
+                @include padding($top: 15px);
+            }
+        }
+    }
+}

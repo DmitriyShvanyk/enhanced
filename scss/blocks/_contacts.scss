@@ -1,0 +1,105 @@
+.contacts {
+    &__block {
+        @include margin($bottom: 133px);
+
+        &:last-of-type {
+            @include margin($bottom: 35px);
+        }
+    }
+
+    &__map {
+        @include aspect-ratio(82.4%);
+
+        &::before {
+            content: 'Loading...';
+            color: $dark2;
+            font-size: 16px;
+            font-weight: 700;
+            @include center;
+            animation: animTextLoading 2s linear infinite;
+        }
+
+        iframe {
+            @include position(absolute, $top: 0, $left: 0);
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        @include margin($top: 2px, $bottom: 1px);
+    }
+
+    @media (min-width: 768px) {
+        &__container {
+            @include padding($top: 68px);
+        }
+
+        &__content {
+            @include padding($left: 30px, $right: 0px);
+        }
+
+        &__block--reverse {
+            .contacts__content {
+                @include padding($left: 0px, $right: 30px);
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        &__block {
+            @include margin($bottom: 85px);
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 15px);
+        }
+
+        &__block {
+            @include margin($bottom: 65px);
+
+            &:last-of-type {
+                @include margin($bottom: 25px);
+            }
+        }
+
+        &__map {
+            @include margin($bottom: 2em);
+        }
+
+        &__subtitle {
+            @include margin($top: 0, $bottom: 10px);
+        }
+
+        &__info {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__subtitle {
+            font-size: 6vw;
+        }
+    }
+}
+
+@keyframes animTextLoading {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,121 @@
+.reviews {
+    &__head {
+        @include margin($bottom: 36px);
+    }
+
+    &__body {
+        @include margin($bottom: 70px);
+    }
+
+    &__columns {
+        column-count: 2;
+        column-gap: 32px;
+    }
+
+    &__column {
+        vertical-align: top;
+        break-inside: avoid;
+    }
+
+    &__item {
+        color: #666;
+        text-align: justify;
+        letter-spacing: .25px;
+        @include margin($bottom: 2.3em);
+
+        p {
+            @include margin($bottom: 1.45em);
+        }
+    }
+
+    &__name {
+        color: $red;
+        font-size: 14px;
+        font-weight: 500;
+        @include margin($top: 0, $bottom: 0);
+        text-transform: uppercase;
+    }
+
+    &__pagination {
+        @include margin($bottom: 50px);
+    }
+
+    &__swiper {
+        min-height: 100px;
+
+        .swiper-button-prev,
+        .swiper-button-next,
+        .swiper-pagination-bullet {
+            width: 33px;
+            height: 33px;
+            min-width: 33px;
+            min-height: 33px;
+            border: 1px solid $dark2;
+            border-radius: 50%;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            @include position(relative, $top: 0, $left: 0, $right: 0);
+            color: $dark2;
+            font-size: 14px;
+            text-shadow: none;
+            @include margin($top: 0, $bottom: 0);
+
+            &:hover,
+            &:focus {
+                color: $red;
+                border-color: $red;
+            }
+        }
+
+        .swiper-pagination {
+            @include position(relative, $top: 0, $left: 0, $right: 0);
+            width: auto;
+        }
+
+        .swiper-pagination-bullet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            opacity: 1;
+
+            &:hover {
+                color: $dark;
+                border-color: $dark;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            &,
+            &:hover {
+                border-color: $red;
+                color: $red;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__body {
+            @include padding($right: 32px);
+        }
+    }
+
+    @media (max-width:991px) {
+        &__body {
+            @include margin($bottom: 30px);
+        }
+    }
+
+    @media (max-width:767px) {
+        &__columns {
+            column-count: 1;
+            column-gap: 0;
+        }
+
+        &__head {
+            @include margin($bottom: 25px);
+        }
+    }
+}

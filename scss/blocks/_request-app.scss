@@ -1,0 +1,73 @@
+.request-app {
+    background-color: $dark2;
+
+    &__title {
+        color: $white;
+        text-transform: none;
+        @include margin($bottom: 18px);
+    }
+
+    &__form {
+        max-width: 880px;
+
+        .form__item {
+            @include margin($bottom: 1.5em);
+        }
+
+        .form__body {
+            @include margin($bottom: 0);
+        }
+
+        .form__submit {
+            border-color: $red;
+            font-weight: 500;
+            letter-spacing: .7px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__form {
+            @include margin($bottom: 1.6em);
+
+            .form__body {
+                column-count: 2;
+                column-gap: 118px;
+            }
+
+            .form__item {
+                &:nth-of-type(2),
+                &:nth-of-type(3),
+                &:nth-of-type(6),
+                &:nth-of-type(7) {
+                    @include margin($bottom: 3em);
+                }
+            }
+
+            .form__foot {
+                text-align: right;
+                @include margin($top: 20px);
+            }
+
+            .form__required {
+                @include margin($top: -6px);
+            }
+
+            .form__submit {
+                min-width: 94px;
+                @include padding($top: 11px, $bottom: 11px, $left: 20px, $right: 20px);
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 40px, $bottom: 40px);
+        }
+
+        &__form {
+            .form__required {
+                @include margin($bottom: 1.5em);
+            }
+        }
+    }
+}

@@ -1,0 +1,188 @@
+.patient-info-landing {
+    &__container {
+        @include padding($top: 45px);
+    }
+
+    &__inner {
+        @include margin($bottom: 25px);
+    }
+
+    &__pict,
+    &__info {
+        position: relative;
+    }
+
+    &__pict {
+        background-color: $dark;
+        @include margin($bottom: 15px);
+    }
+
+    &__pict--2 {
+        .patient-info-landing__subtitle {
+            @include margin($top: .9em);
+        }
+    }
+
+    &__img {
+        @include position(absolute, $top: 0, $left: 0);
+        @include object-cover;
+    }
+
+    &__subtitle {
+        font-size: 25px;
+        letter-spacing: .6px;
+        @include margin($bottom: 0);
+
+        &~& {
+            @include margin($top: 1.2em);
+        }
+    }
+
+    &__content {
+        letter-spacing: .5px;
+        line-height: 1.6;
+        @include margin($top: 28px);
+
+        p {
+            color: $darkgray;
+            @include margin($top: 4px, $bottom: 1.5em);
+        }
+    }
+
+    &__item {
+        .patient-info-landing__subtitle {
+            @include margin($bottom: 25px);
+        }
+    }
+
+    &__list {
+        @include margin($top: 1.7em);
+    }
+
+    &__info {
+        max-width: 390px;
+        width: 100%;
+        z-index: 9;
+        @include padding($top: 25px, $bottom: 25px, $left: 25px, $right: 25px);
+
+        .patient-info-landing__subtitle {
+            color: $dark;
+            line-height: 1;
+            @include margin($bottom: 25px);
+        }
+    }
+
+    &__btn {
+        font-size: 14px;
+        line-height: 1.2;
+        border-color: $red;
+        letter-spacing: 1px;
+        @include padding($top: 8px, $bottom: 5px, $left: 15px, $right: 15px);
+    }
+
+    &__form {
+        @include margin($bottom: 35px);
+
+        .form__body {
+            @include margin($bottom: 25px);
+        }
+    }
+
+    @media (min-width:992px) {
+        &__picts {
+            @include padding($left: 80px);
+        }
+    }
+
+    @media (min-width:768px) {
+        &__pict {
+            min-height: 208px;
+            @include margin($top: 33px, $bottom: 2em);
+        }
+
+        &__pict--2 {
+            min-height: 294px;
+        }
+
+        &__content {
+            @include padding($right: 30px);
+        }
+
+        &__info {
+            .patient-info-landing__subtitle {
+                font-size: 33px;
+                line-height: .8;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 40px);
+        }
+
+        &__picts {
+            flex-basis: 0;
+            gap: 0 15px;
+        }
+
+        &__pict {
+            width: 100%;
+        }
+
+        &__content {
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        &__item {
+            break-inside: avoid;
+        }
+    }
+
+    @media (max-width: 640px) {
+        &__container {
+            @include padding($top: 15px);
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__inner {
+            @include margin($bottom: 15px);
+        }
+
+        &__subtitle {
+            font-size: 6vw;
+        }
+
+        &__picts {
+            gap: 0;
+        }
+
+        &__content {
+            column-count: 1;
+            column-gap: 0;
+            @include margin($top: 20px);
+        }
+
+        &__info {
+            .patient-info-landing__subtitle {
+                @include margin($bottom: 20px);
+            }
+        }
+
+        &__form {
+            @include margin($bottom: 20px);
+        }
+
+        &__item {
+            &+& {
+                @include margin($top: 2em);
+            }
+
+            .patient-info-landing__subtitle {
+                @include margin($bottom: 15px);
+            }
+        }
+    }
+}

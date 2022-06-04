@@ -1,0 +1,6 @@
+.container {
+  max-width: 1030px;
+  width: 100%;
+  @include margin($left: auto, $right: auto);
+  @include padding($top: 25px, $bottom: 25px, $left: 15px, $right: 15px);
+}

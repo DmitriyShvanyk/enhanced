@@ -1,0 +1,79 @@
+.feedback {
+    background-color: $dark2;
+
+    &__container {
+        @include padding($top: 32px);
+    }
+
+    &__subtitle {
+        color: $darkblue;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include margin($bottom: 25px);
+    }
+
+    &__content {
+        color: $white;
+        letter-spacing: 1px;
+
+        p {
+            line-height: 1.7;
+            @include margin($top: 0, $bottom: 1.9em);
+        }
+    }
+
+    &__form {
+        max-width: 340px;
+        @include margin($left: auto, $right: auto);
+
+        .form__control {
+            height: 42px;
+        }
+
+        .form__control--textarea {
+            min-height: 100px;
+        }
+
+        .form__body {
+            @include margin($bottom: 0);
+        }
+
+        .form__foot {
+            text-align: right;
+        }
+
+        .form__submit {
+            background-color: $dark;
+            border-color: $dark;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__content {
+            max-width: 410px;
+            @include padding($left: 20px);
+            @include margin($top: 65px);
+        }
+
+        &__form {
+            .form__submit {
+                min-width: 95px;
+                @include padding($left: 15px, $right: 15px, $top: 6px, $bottom: 3px);
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 55px, $bottom: 55px);
+        }
+
+        &__form {
+            max-width: 100%;
+        }
+
+        .form__foot {
+            text-align: center;
+        }
+    }
+}

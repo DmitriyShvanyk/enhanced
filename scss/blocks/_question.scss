@@ -1,0 +1,75 @@
+.question {
+    &__container {
+        @include padding($top: 62px, $bottom: 62px);
+    }
+
+    &__inner {
+        @include margin($bottom: 28px);
+    }
+
+    &__title {
+        text-transform: none;
+        color: $dark;
+        letter-spacing: .1px;
+        @include margin($bottom: 35px);
+    }
+
+    &--location {
+        background-color: $dark2;
+
+        .form__submit {
+            border-color: $red;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__pict {
+            @include margin($top: 2.3em);
+            @include position(relative, $left: 7px);
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        &__form {
+            @include margin($left: 10px);
+        }
+
+        &--location {
+            background-color: $dark2;
+
+            .question__inner {
+                @include margin($bottom: 55px);
+            }
+
+            .question__title {
+                @include margin($top: 55px);
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__container {
+            @include padding($top: 50px, $bottom: 50px);
+        }
+
+        &__inner {
+            @include margin($bottom: 0);
+        }
+
+        &__title {
+            text-align: center;
+            @include margin($bottom: 35px);
+        }
+
+        &__pict {
+            @include margin($bottom: 25px);
+        }
+
+        &__img {
+            max-height: 200px;
+        }
+    }
+}
